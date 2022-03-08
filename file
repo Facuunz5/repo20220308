@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+mkdir 16
+cd 16
+git init
+touch f1
+git add f1
+git commit -m "c 1 en master"
+touch f2 
+git add f2
+git commit -m "c 2 en master"
+touch f3
+git add f3
+git commit -m "c 3 en master"
+touch f4 
+git add f4
+git commit -m "c 4 en master\n"
+git --no-pager log --oneline
+git checkout -b arreglo
+git --no-pager log --oneline
+touch change1
+git add change1
+git commit -m "c 1 en arreglo"
+touch change2
+git add change2
+git commit -m "c 2 en arreglo"
+git --no-pager log --oneline
+git checkout master
+git merge feature
+git merge arreglo
+git --no-pager log --oneline
+git --no-pager log --oneline --graph
